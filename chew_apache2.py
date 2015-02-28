@@ -1,4 +1,4 @@
-### This is a simple python script for making more sense of the Apache2 log files
+### This is a python script for analysing the Apache2 log files
 ### Put your options here.  Read the comments to the right if unclear ##########
 log_filename = 'other_vhosts_access.log'  # your Apache log file
 cut_ip = ['123.125', '66', '220.181', '157.55'] # IP addresses to exclude
@@ -8,7 +8,7 @@ period = '=2015-02-28' # period to look at.  Acceptable formats: 2015-02-15 ~ 20
 show_only_page_with_words = ['html', 'pdf', 'txt'] # only show visited links that contain at least one of the words in the list
 show_only_page_with_words = [] # uncomment this line to restrictions on links
 
-### BLACK BOX. YOU CAN SAFELY IGNORE ###########################################
+### BLACK BOX. YOU CAN SAFELY IGNORE. ##########################################
 def in_exclude_list(a, lst):
     
     ''' Return True if a (an ip) is in list, return False otherwise '''
