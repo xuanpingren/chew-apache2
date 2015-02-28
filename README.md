@@ -1,5 +1,5 @@
 # chew-apache2
-`chew-apache2` is a python script that analyses the Apache2 log file
+`chew-apache2` is a python script that analyses the Apache2 log file.
 
 Function
 ---------
