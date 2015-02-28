@@ -204,6 +204,5 @@ print_ip(L[0:min(N, len(L))])
 print('\n** Most visited pages:')
 hot_lst = hot_page(slim_all)
 print_page(hot_lst[0:min(N, len(hot_lst))], show_only_page_with_words)
-print('\n朝气蓬勃社出品')
 
 ### 朝气蓬勃社出品 ############################################################## 
