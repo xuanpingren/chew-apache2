@@ -19,3 +19,8 @@ You might want to change options in the first several lines.
 - cut_ip: put the IPs that you are not interested in (for example, IPs from the search engines companies)
 - period: put the particular period you want to look at
 - show_only_page_with_words: show me only the links that contain certain words
+
+Output
+------
+
+The first line contain three numbers.  The first number is the total number of visits (IPs) within log_filename, the second number is the total number of IPs that are not in list cut_ip, and the last number is the number of unique IPs from the second number.
