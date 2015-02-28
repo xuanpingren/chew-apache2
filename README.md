@@ -23,4 +23,4 @@ You might want to change options in the first several lines.
 Output
 ------
 
-The first line contain three numbers.  The first number is the total number of visits (IPs) within log_filename, the second number is the total number of IPs that are not in list cut_ip, and the last number is the number of unique IPs from the second number.
+The first line contains three numbers.  The first number is the total number of visits (IPs) within log_filename, the second number is the total number of IPs that are not in list cut_ip, and the last number is the number of unique IPs from the second number.
