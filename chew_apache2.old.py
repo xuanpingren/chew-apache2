@@ -1,14 +1,14 @@
-### This is a simple python script for making more sense of the Apache2 log files
+### This is a python script for analysing the Apache2 log files
 ### Put your options here.  Read the comments to the right if unclear ##########
-log_filename = '/var/log/apache2/other_vhosts_access.log'  # your Apache log file
+log_filename = 'other_vhosts_access.log'  # your Apache log file
 cut_ip = ['123.125', '66', '220.181', '157.55'] # IP addresses to exclude
-N  = 200  # maximum number of top items to display
+N  = 10  # maximum number of top items to display
 period = '=2015-02-28' # period to look at.  Acceptable formats: 2015-02-15 ~ 2015-02-22, <2015-02-15, >2015-02-15
-period = ' ' # uncomment this line to remove restrictions on time 
-show_only_page_with_words = ['this', 'that'] # only show visited links that contain at least one of the words in the list
-show_only_page_with_words = [] # uncomment this line to remove restrictions on links
+#period = ' ' # uncomment this line to remove restrictions on time 
+show_only_page_with_words = ['html', 'pdf', 'txt'] # only show visited links that contain at least one of the words in the list
+show_only_page_with_words = [] # uncomment this line to restrictions on links
 
-### BLACK BOX. YOU CAN SAFELY IGNORE ###########################################
+### BLACK BOX. YOU CAN SAFELY IGNORE. ##########################################
 def in_exclude_list(a, lst):
     
     ''' Return True if a (an ip) is in list, return False otherwise '''
@@ -145,26 +145,10 @@ def unique_ip(L):
         lst = lst + [x]
     return lst
 
-
-import subprocess
-def get_ip_location(ip):
-    a = 'ipinfo.io/' + ip
-    s = subprocess.Popen(['curl', a], stderr=subprocess.STDOUT, stdout=subprocess.PIPE).communicate()[0]
-    lst = s.split('\n')
-    city = lst[7]
-    city = city[city.find(':')+1:].strip()
-    city = city.translate(None, ''.join(['\"', ',']))
-    country = lst[8]
-    country = country[country.find(':')+1:].strip()
-    country = country.translate(None, ''.join(['\"', ',']))    
-    return country + ' (' + city + ')'
- 
-
+    
 def print_ip(L):
     for x in L:
-        count = x[1]
-        ip = x[0]
-        print('%s\t%s\t%s' % (count, ip, get_ip_location(ip)))
+        print('%s \t %s' % (x[1], x[0]))
      
      
 def hot_page(L):
@@ -221,3 +205,4 @@ print('\n** Most visited pages:')
 hot_lst = hot_page(slim_all)
 print_page(hot_lst[0:min(N, len(hot_lst))], show_only_page_with_words)
 
+### 朝气蓬勃社出品 ############################################################## 
