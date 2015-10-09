@@ -1,10 +1,10 @@
 # chew-apache2
-`chew-apache2` is a python script that analyses the Apache2 log file.
+`chew-apache2` is a python script that analyzes the Apache2 access log file.
 
 Function
 ---------
 
-Making more sense out of the Apache2 log file.
+Make more sense out of the Apache2 access log file.  Print unique visting IPs.  Sort these IPs according to their visiting frequency.  Get the geological location of these IPs.  Print pages visited, sorted in decreasing order of visit times.
 
 How to Use
 ----------
